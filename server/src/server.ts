@@ -17,7 +17,13 @@ app.get('/hello', (req, res) => {
 })
 
 app.get('/v1/users', (req, res) => {
-  return res.json(users)
+  const search = String(req.query.search)
+
+  if(!search) return res.status(400).json({ error: true, message: 'Query not allowed'})
+
+  const filteredUser = search ? users.filter(user => user.includes(search)) : users
+
+  return res.json(filteredUser)
 })
 
 app.get('/v1/users/:id', (req, res) => {
