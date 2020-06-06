@@ -1,6 +1,7 @@
 import express from 'express'
 
 const app = express()
+app.use(express.json())
 
 const users = [
   'Alice',
@@ -35,12 +36,14 @@ app.get('/v1/users/:id', (req, res) => {
 })
 
 app.post('/v1/users', (req, res) => {
+  const data = req.body
+
   const user = {
-    name: 'Marcel',
-    email: 'marcel@email.com'
+    name: data.name,
+    email: data.email,
   }
 
-  return res.json(user)
+  return res.json(data)
 })
 
 app.listen(3000)
