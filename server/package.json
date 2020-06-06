@@ -10,9 +10,10 @@
   "scripts": {
     "dev": "ts-node-dev src/server.ts",
     "db": "knex --knexfile src/database/knexfile.ts",
-    "db:migrate": "knex --knexfile src/database/knexfile.ts migrate:latest",
-    "db:up": "knex --knexfile src/database/knexfile.ts migrate:up",
-    "db:down": "knex --knexfile src/database/knexfile.ts migrate:down"
+    "db:migrate": "yarn run db migrate:latest",
+    "db:up": "yarn run db migrate:up",
+    "db:down": "yarn run db migrate:down",
+    "db:seed": "yarn run db seed:run"
   },
   "dependencies": {
     "express": "^4.17.1",

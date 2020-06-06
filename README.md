@@ -15,6 +15,11 @@ yarn run db:migrate
 cd server && yarn dev
 ```
 
+### Development env
+```bash
+yarn run db:seed # to run knex seed:run
+```
+
 ### Database commands
 ```bash
 yarn run db # to run knex commands
