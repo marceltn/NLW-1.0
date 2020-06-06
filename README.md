@@ -1,2 +1,3 @@
 # NLW-1.0
-Ecoleta - a platform to collect recycle stuffs in your neighborhood - Next Level Week from Rocketset
+Ecoleta - a marketplace to collect waste - Next Level Week from Rocketset
+
