@@ -8,7 +8,7 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "ts-node-dev src/server.ts",
+    "dev": "ts-node-dev --transpileOnly --ignore-watch node_modules src/server.ts",
     "db": "knex --knexfile src/database/knexfile.ts",
     "db:migrate": "yarn run db migrate:latest",
     "db:up": "yarn run db migrate:up",
