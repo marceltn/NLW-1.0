@@ -1,3 +1,13 @@
+import React from 'react'
+import { View, StyleSheet } from 'react-native'
+import Constants from 'expo-constants'
+
+const Points = () => {
+  return <View / >
+}
+
+export default Points
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
