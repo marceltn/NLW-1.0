@@ -10,6 +10,7 @@ const generateResourceUrl = (resource: string): string => `/v1${resource}`
 
 routes.get(generateResourceUrl('/items'), itemCtrl.index)
 
+routes.get(generateResourceUrl('/points'), pointCtrl.index)
 routes.get(generateResourceUrl('/points/:id'), pointCtrl.show)
 routes.post(generateResourceUrl('/points'), pointCtrl.create)
 
