@@ -40,9 +40,18 @@ const CreatePoint = () => {
   const [ufs, setUfs] = useState<UF[]>([])
   const [cities, setCities] = useState<City[]>([])
 
+  const [initialPosition, setInitialPosition] = useState<[number, number]>([0,0])
   const [selectedPosition, setSelectedPosition] = useState<[number, number]>([0,0])
   const [selectedUf, setSelectedUf] = useState(0)
   const [selectedCity, setSelectedCity] = useState(0)
+
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(position => {
+      const { latitude, longitude } = position.coords
+
+      setInitialPosition([latitude || -23.5575756, longitude || -46.635728])
+    })
+  }, [])
 
   useEffect(() => {
     api.get('items').then(res => {
@@ -131,7 +140,7 @@ const CreatePoint = () => {
             <span>Selecione o endereço no mapa</span>
           </legend>
 
-          <Map center={{ lat: -23.5575756, lng: -46.635728}} zoom={17.5} onClick={handleMapClick}>
+          <Map center={initialPosition} zoom={17.5} onClick={handleMapClick}>
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
