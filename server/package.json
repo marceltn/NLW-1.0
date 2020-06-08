@@ -1,6 +1,6 @@
 {
   "name": "ecoleta-server",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "server of ecoleta platform",
   "main": "server.ts",
   "repository": "https://github.com/marcelnakamine/NLW-1.0.git",
